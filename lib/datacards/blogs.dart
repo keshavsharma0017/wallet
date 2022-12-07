@@ -114,18 +114,18 @@ class Blogs extends StatelessWidget {
                                 0,
                               ),
                               child: Row(
-                                children: const [
-                                  Icon(Icons.circle_outlined),
-                                  SizedBox(
+                                children: [
+                                  Image.asset("assets/pfp2.png"),
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Ann Korlowski',
                                     style: TextStyle(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(left: 58.0),
                                     child: Text(
                                       '08/09/2022',
@@ -221,18 +221,18 @@ class Blogs extends StatelessWidget {
                                 0,
                               ),
                               child: Row(
-                                children: const [
-                                  Icon(Icons.circle_outlined),
-                                  SizedBox(
+                                children: [
+                                  Image.asset("assets/pfp2.png"),
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Ann Korlowski',
                                     style: TextStyle(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(left: 58.0),
                                     child: Text(
                                       '08/09/2022',
@@ -328,18 +328,18 @@ class Blogs extends StatelessWidget {
                                 0,
                               ),
                               child: Row(
-                                children: const [
-                                  Icon(Icons.circle_outlined),
-                                  SizedBox(
+                                children: [
+                                  Image.asset("assets/pfp2.png"),
+                                  const SizedBox(
                                     width: 5,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Ann Korlowski',
                                     style: TextStyle(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(left: 58.0),
                                     child: Text(
                                       '08/09/2022',

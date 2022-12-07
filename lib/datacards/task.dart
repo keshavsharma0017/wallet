@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Task extends StatelessWidget {
@@ -16,20 +15,19 @@ class Task extends StatelessWidget {
         0,
       ),
       child: SizedBox(
-        height: 180,
+        height: 210,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               "Task",
               style: TextStyle(
-                  color:
-                      Color.fromARGB(255, 87, 87, 87),
+                  color: Color.fromARGB(255, 87, 87, 87),
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-              height: 136,
+              height: 180,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
@@ -48,94 +46,57 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                border:
+                                    Border.all(width: 0.1, color: Colors.grey),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
-                                      0,
-                                      0,
-                                      8.0,
-                                      8.0,
+                                  Row(children: [
+                                    Image.asset(
+                                      'assets/ellipse.png',
+                                      height: 70,
+                                      width: 70,
                                     ),
-                                    child:
-                                        Row(children: [
-                                      Flexible(
-                                        child:
-                                            Image.asset(
-                                          'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
-                                          cacheWidth: 5,
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      const Text(
-                                        '01',
-                                        style: TextStyle(
-                                            fontSize:
-                                                35,
-                                            fontWeight:
-                                                FontWeight
-                                                    .w500,
-                                            color: Color
-                                                .fromARGB(
-                                                    255,
-                                                    246,
-                                                    237,
-                                                    210)),
-                                      ),
-                                    ]),
-                                  ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    const Text(
+                                      '01',
+                                      style: TextStyle(
+                                          fontSize: 45,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color.fromARGB(
+                                              255, 246, 237, 210)),
+                                    ),
+                                  ]),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
-                                      0,
+                                      8.0,
                                       8.0,
                                       8.0,
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Complete KYC',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -165,42 +126,28 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(15)),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child:
-                                        Row(children: [
-                                      Flexible(
-                                        child:
-                                            Image.asset(
-                                          'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
-                                          cacheWidth: 5,
-                                        ),
+                                    child: Row(children: [
+                                      Image.asset(
+                                        'assets/ellipse.png',
+                                        cacheHeight: 75,
+                                        cacheWidth: 75,
                                       ),
                                       const SizedBox(
                                         width: 10,
@@ -208,9 +155,7 @@ class Task extends StatelessWidget {
                                     ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -218,26 +163,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Create Category',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -267,40 +205,30 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(
+                                    15,
+                                  )),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child:
-                                        Row(children: [
+                                    child: Row(children: [
                                       Flexible(
-                                        child:
-                                            Image.asset(
+                                        child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
+                                          cacheHeight: 5,
                                           cacheWidth: 5,
                                         ),
                                       ),
@@ -310,24 +238,15 @@ class Task extends StatelessWidget {
                                       const Text(
                                         '02',
                                         style: TextStyle(
-                                            fontSize:
-                                                35,
-                                            fontWeight:
-                                                FontWeight
-                                                    .w500,
-                                            color: Color
-                                                .fromARGB(
-                                                    255,
-                                                    251,
-                                                    232,
-                                                    216)),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                                255, 251, 232, 216)),
                                       ),
                                     ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -335,26 +254,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Create Category',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -384,40 +296,28 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(15)),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child:
-                                        Row(children: [
+                                    child: Row(children: [
                                       Flexible(
-                                        child:
-                                            Image.asset(
+                                        child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
+                                          cacheHeight: 5,
                                           cacheWidth: 5,
                                         ),
                                       ),
@@ -427,24 +327,15 @@ class Task extends StatelessWidget {
                                       const Text(
                                         '03',
                                         style: TextStyle(
-                                            fontSize:
-                                                35,
-                                            fontWeight:
-                                                FontWeight
-                                                    .w500,
-                                            color: Color
-                                                .fromARGB(
-                                                    255,
-                                                    251,
-                                                    235,
-                                                    206)),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                                255, 251, 235, 206)),
                                       ),
                                     ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -452,26 +343,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Set Limit to categ..',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -501,40 +385,28 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(15)),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child:
-                                        Row(children: [
+                                    child: Row(children: [
                                       Flexible(
-                                        child:
-                                            Image.asset(
+                                        child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
+                                          cacheHeight: 5,
                                           cacheWidth: 5,
                                         ),
                                       ),
@@ -544,24 +416,15 @@ class Task extends StatelessWidget {
                                       const Text(
                                         '04',
                                         style: TextStyle(
-                                            fontSize:
-                                                35,
-                                            fontWeight:
-                                                FontWeight
-                                                    .w500,
-                                            color: Color
-                                                .fromARGB(
-                                                    255,
-                                                    211,
-                                                    214,
-                                                    241)),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                                255, 211, 214, 241)),
                                       ),
                                     ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -569,26 +432,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Add apps to categ..',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -618,40 +474,28 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(15)),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child:
-                                        Row(children: [
+                                    child: Row(children: [
                                       Flexible(
-                                        child:
-                                            Image.asset(
+                                        child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight:
-                                              5,
+                                          cacheHeight: 5,
                                           cacheWidth: 5,
                                         ),
                                       ),
@@ -661,24 +505,15 @@ class Task extends StatelessWidget {
                                       const Text(
                                         '05',
                                         style: TextStyle(
-                                            fontSize:
-                                                35,
-                                            fontWeight:
-                                                FontWeight
-                                                    .w500,
-                                            color: Color
-                                                .fromARGB(
-                                                    255,
-                                                    247,
-                                                    240,
-                                                    220)),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                                255, 247, 240, 220)),
                                       ),
                                     ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -686,26 +521,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Make on taxn',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
@@ -735,65 +563,50 @@ class Task extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: 160,
+                          width: 160,
                           child: Container(
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 0.1,
-                                      color:
-                                          Colors.grey),
-                                  borderRadius:
-                                      BorderRadius
-                                          .circular(
-                                              15)),
+                                      width: 0.1, color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(15)),
                               child: Column(
-                                crossAxisAlignment:
-                                    CrossAxisAlignment
-                                        .center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       8.0,
                                       8.0,
                                     ),
-                                    child: Row(
-                                        children: [
-                                          Flexible(
-                                            child: Image
-                                                .asset(
-                                              'assets/appicon.png',
-                                              cacheHeight:
-                                                  30,
-                                              cacheWidth:
-                                                  30,
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            width: 10,
-                                          ),
-                                          const Text(
-                                            '06',
-                                            style: TextStyle(
-                                                fontSize: 35,
-                                                fontWeight: FontWeight.w500,
-                                                color: Color.fromARGB(
-                                                  255,
-                                                  238,
-                                                  236,
-                                                  226,
-                                                )),
-                                          ),
-                                        ]),
+                                    child: Row(children: [
+                                      Flexible(
+                                        child: Image.asset(
+                                          'assets/appicon.png',
+                                          cacheHeight: 30,
+                                          cacheWidth: 30,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Text(
+                                        '06',
+                                        style: TextStyle(
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                              255,
+                                              238,
+                                              236,
+                                              226,
+                                            )),
+                                      ),
+                                    ]),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets
-                                            .fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       8.0,
                                       0,
                                       8.0,
@@ -801,26 +614,19 @@ class Task extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment
-                                              .center,
+                                          CrossAxisAlignment.center,
                                       children: const [
                                         Text(
                                           'Make 5 taxn in each categ..',
                                           style: TextStyle(
-                                              fontSize:
-                                                  12,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w700),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         Text(
                                           'Create Category and \n earn \$25',
                                           style: TextStyle(
-                                              fontSize:
-                                                  9,
-                                              fontWeight:
-                                                  FontWeight
-                                                      .w400),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),

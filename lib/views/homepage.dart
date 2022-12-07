@@ -5,6 +5,7 @@ import '../datacards/categories.dart';
 import '../datacards/offers.dart';
 import '../datacards/quotes.dart';
 import '../datacards/task.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -14,10 +15,28 @@ class Homepage extends StatefulWidget {
 }
 
 class _Homepage extends State<Homepage> {
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: FloatingNavbar(
+          borderRadius: 25,
+          iconSize: 28,
+          onTap: (int val) => setState(() => _index = val),
+          currentIndex: _index,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.indigo,
+          selectedBackgroundColor: Colors.white,
+          unselectedItemColor: Colors.grey[400],
+          items: [
+            FloatingNavbarItem(icon: Icons.home),
+            FloatingNavbarItem(icon: Icons.credit_card_outlined),
+            FloatingNavbarItem(icon: Icons.pie_chart_outline),
+            FloatingNavbarItem(icon: Icons.money),
+          ],
+        ),
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -51,17 +70,9 @@ class _Homepage extends State<Homepage> {
                 ),
                 child: Row(
                   children: [
-                    const SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Icon(
-                          Icons.person_pin_rounded,
-                          color: Colors.blue,
-                        )
-                        // ImageIcon(
-                        //   AssetImage('assets/new1.png'),
-                        // ),
-                        ),
+                    Image.asset(
+                      'assets/pfp.png',
+                    ),
                     const SizedBox(
                       width: 10,
                     ),
