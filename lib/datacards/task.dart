@@ -228,8 +228,8 @@ class Task extends StatelessWidget {
                                       Flexible(
                                         child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight: 5,
-                                          cacheWidth: 5,
+                                          height: 70,
+                                          width: 70,
                                         ),
                                       ),
                                       const SizedBox(
@@ -317,8 +317,8 @@ class Task extends StatelessWidget {
                                       Flexible(
                                         child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight: 5,
-                                          cacheWidth: 5,
+                                          height: 70,
+                                          width: 70,
                                         ),
                                       ),
                                       const SizedBox(
@@ -406,8 +406,8 @@ class Task extends StatelessWidget {
                                       Flexible(
                                         child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight: 5,
-                                          cacheWidth: 5,
+                                          height: 70,
+                                          width: 70,
                                         ),
                                       ),
                                       const SizedBox(
@@ -495,8 +495,8 @@ class Task extends StatelessWidget {
                                       Flexible(
                                         child: Image.asset(
                                           'assets/ellipse.png',
-                                          cacheHeight: 5,
-                                          cacheWidth: 5,
+                                          height: 70,
+                                          width: 70,
                                         ),
                                       ),
                                       const SizedBox(
@@ -583,9 +583,9 @@ class Task extends StatelessWidget {
                                     child: Row(children: [
                                       Flexible(
                                         child: Image.asset(
-                                          'assets/appicon.png',
-                                          cacheHeight: 30,
-                                          cacheWidth: 30,
+                                          'assets/ellipse.png',
+                                          height: 70,
+                                          width: 70,
                                         ),
                                       ),
                                       const SizedBox(

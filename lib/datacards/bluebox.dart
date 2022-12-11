@@ -13,7 +13,7 @@ class Bluebox extends StatelessWidget {
         decoration: BoxDecoration(
             color: const Color.fromARGB(255, 48, 63, 159),
             borderRadius: BorderRadius.circular(25)),
-        height: MediaQuery.of(context).size.height / 2,
+        height: MediaQuery.of(context).size.height / 1.9,
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,6 +216,8 @@ class Bluebox extends StatelessWidget {
                                     elevation: 0,
                                   ),
                                   onPressed: () => showModalBottomSheet(
+                                    backgroundColor: Colors.transparent,
+                                    isScrollControlled: true,
                                     context: context,
                                     builder: (context) => buildSheet(),
                                   ),
@@ -244,43 +246,238 @@ class Bluebox extends StatelessWidget {
   }
 }
 
-Widget buildSheet() => Scaffold(
-    appBar: AppBar(
-      toolbarHeight: 70,
-      iconTheme: const IconThemeData(color: Colors.black),
-      backgroundColor: Colors.white,
-      title: const Text(
-        'Adding Transaction',
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
-      ),
-    ),
-    body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 12.0, left: 15),
-            child: Text(
-              'Enter Spend Amount',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 20,
+Widget buildSheet() => DraggableScrollableSheet(
+      initialChildSize: 0.9,
+      maxChildSize: 0.9,
+      minChildSize: 0.9,
+      builder: (context, scrollController) => Container(
+        color: Colors.white,
+        child: ListView(
+          controller: scrollController,
+          children: [
+            Container(
+              height: 80,
+              decoration: BoxDecoration(
+                  border: Border(
+                bottom: BorderSide(width: 0.75, color: Colors.grey.shade400),
+              )),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      10.0,
+                      8.0,
+                      4.0,
+                      8.0,
+                    ),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.arrow_back, size: 30)),
+                  ),
+                  const Text(
+                    "Adding Transaction",
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  )
+                ],
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 12, left: 15),
-            child: Text(
-              'Enter the amount that you have spend without using zero balance ',
-              style: TextStyle(
-                color: Colors.grey[800],
-                fontWeight: FontWeight.w400,
-                fontSize: 15,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, left: 15),
+                    child: Text(
+                      'Enter Spend Amount',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 12, left: 15, bottom: 10),
+                    child: Text(
+                      'Enter the amount that you have spend without using zero balance ',
+                      style: TextStyle(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.blue[900],
+                        labelText: 'Amount',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, left: 15),
+                    child: Text(
+                      'Enter Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.blue[900],
+                        labelText: '',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, left: 15),
+                    child: Text(
+                      'Mode Of payment',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            // maximumSize: MaterialStateProperty.all<Size>(
+
+                            // const Size.fromWidth(1)),
+
+                            elevation: MaterialStateProperty.all<double>(0),
+
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                side: const BorderSide(color: Colors.blue),
+                              ),
+                            ),
+                          ),
+                          child: const Text(
+                            'UPI',
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            elevation: MaterialStateProperty.all<double>(0),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                side: const BorderSide(color: Colors.blue),
+                              ),
+                            ),
+                          ),
+                          child: const Text(
+                            'Card',
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            elevation: MaterialStateProperty.all<double>(0),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                side: const BorderSide(color: Colors.blue),
+                              ),
+                            ),
+                          ),
+                          child: const Text(
+                            'Cash',
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, left: 15),
+                    child: Text(
+                      'Quick note',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.blue[900],
+                        labelText: 'Quick note',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    child: const Text('Save'),
+                  )
+                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ));
+    );

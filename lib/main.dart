@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project3/constant/route.dart';
+import 'package:project3/views/forget.dart';
 import 'package:project3/views/homepage.dart';
 import 'package:project3/views/login.dart';
+import 'package:project3/views/signin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +21,10 @@ class MyApp extends StatelessWidget {
       routes: {
         homeRoute: (context) => const Homepage(),
         loginRoute: (context) => const Loginpage(),
+        signupRoute: (context) => const Signin(),
+        forgetRoute: (context) => const Forgetpass(),
       },
-      home: const Homepage(),
+      home: const Loginpage(),
     );
   }
 }
