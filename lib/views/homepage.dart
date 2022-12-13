@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project3/constant/route.dart';
 import '../datacards/blogs.dart';
 import '../datacards/bluebox.dart';
 import '../datacards/categories.dart';
@@ -7,9 +8,11 @@ import '../datacards/quotes.dart';
 import '../datacards/task.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+enum MenuAction { logout }
 
+class Homepage extends StatefulWidget {
+  const Homepage({super.key, this.name});
+  final name;
   @override
   State<Homepage> createState() => _Homepage();
 }
@@ -44,21 +47,43 @@ class _Homepage extends State<Homepage> {
               elevation: 0.5,
               toolbarHeight: 70,
               actions: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    0,
-                    0,
-                    20,
-                    0,
-                  ),
-                  child: IconButton(
-                    iconSize: 40,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/appicon.png',
+                PopupMenuButton<MenuAction>(
+                  icon: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      0,
+                      0,
+                      0,
+                      0,
                     ),
-                    color: Colors.black,
+                    child: Image.asset(
+                      'assets/appicon.png',
+                      color: Colors.black,
+                      cacheHeight: 500,
+                      cacheWidth: 500,
+                    ),
                   ),
+                  onSelected: (value) async {
+                    switch (value) {
+                      case MenuAction.logout:
+                        final shouldLogout = await showLogOutDialog(context);
+                        // devtools.log(shouldLogout.toString());
+                        if (shouldLogout) {
+                          if (!mounted) return;
+                          await Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            loginRoute,
+                            (_) => false,
+                          );
+                        }
+                        break;
+                    }
+                  },
+                  itemBuilder: (context) {
+                    return const [
+                      PopupMenuItem(
+                          value: MenuAction.logout, child: Text('Logout')),
+                    ];
+                  },
                 ),
               ],
               title: Padding(
@@ -78,16 +103,16 @@ class _Homepage extends State<Homepage> {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Welcome back,",
                           style: TextStyle(
                               color: Color.fromARGB(255, 87, 87, 87),
                               fontSize: 15),
                         ),
                         Text(
-                          "User",
-                          style: TextStyle(
+                          widget.name ?? "User",
+                          style: const TextStyle(
                               color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w500),
@@ -162,4 +187,32 @@ class _Homepage extends State<Homepage> {
       ),
     );
   }
+}
+
+Future<bool> showLogOutDialog(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          title: const Text("Logout"),
+          content: const Text("Are You sure You Want To Logout"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: const Text('Log Out'),
+            ),
+          ],
+        );
+      }).then((value) => value ?? false);
 }

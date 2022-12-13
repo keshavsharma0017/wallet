@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project3/constant/route.dart';
+import 'package:project3/views/homepage.dart';
+
+import '../constant/request.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -10,6 +13,7 @@ class Loginpage extends StatefulWidget {
 }
 
 class LloginpageState extends State<Loginpage> {
+  bool _isLoading = false;
   late final TextEditingController _email;
   late final TextEditingController _passowrd;
 
@@ -27,12 +31,36 @@ class LloginpageState extends State<Loginpage> {
     super.dispose();
   }
 
+  loginUsers() async {
+    setState(() {
+      _isLoading = true;
+    });
+    String res = await AuthController()
+        .signInUsingEmailPassword(_email.text, _passowrd.text);
+    if (res != 'success') {
+      setState(() {
+        _isLoading = false;
+      });
+      if (!mounted) return;
+      return showSnackBarr(res, context);
+    } else {
+      if (!mounted) return;
+      return Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const Homepage()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("Login", style: TextStyle(color: Colors.blue)),
+          child: Text(
+            "Login",
+            style: TextStyle(
+              color: Color.fromARGB(255, 48, 63, 159),
+            ),
+          ),
         ),
         backgroundColor: Colors.white,
       ),
@@ -128,21 +156,28 @@ class LloginpageState extends State<Loginpage> {
                             forgetRoute,
                           );
                         },
-                        child: const Text("Forgot Password?"),
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 48, 63, 159),
+                          ),
+                        ),
                       ),
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            homeRoute, (route) => false);
+                        loginUsers();
                       },
                       style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 48, 63, 159),
                         minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: const Text('Login'),
+                      child: const Text(
+                        'Login',
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -160,7 +195,7 @@ class LloginpageState extends State<Loginpage> {
                           TextSpan(
                             text: " Click Here",
                             style: const TextStyle(
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 48, 63, 159),
                               fontSize: 17,
                             ),
                             recognizer: TapGestureRecognizer()

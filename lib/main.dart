@@ -4,6 +4,7 @@ import 'package:project3/views/forget.dart';
 import 'package:project3/views/homepage.dart';
 import 'package:project3/views/login.dart';
 import 'package:project3/views/signin.dart';
+import 'package:project3/views/verify.dart';
 
 void main() {
   runApp(const MyApp());

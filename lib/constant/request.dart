@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+
 class AuthController {
   Future<String> signUpUsingEmailPassword(email, pass, fname) async {
     final response = await http.post(
@@ -15,11 +16,11 @@ class AuthController {
     }
   }
 
-  Future<String> signInUsingOtp() async {
+  Future signInVerifyOtp(int otp,email) async {
     final response = await http.post(
         Uri.parse(
-            'https://auth-backend-production-054a.up.railway.app/api/v1/auth/send-otp'),
-        body: json.encode({"email": "utkarsh2110024@akgec.ac.in"}));
+            'https://auth-backend-production-054a.up.railway.app/api/v1/auth/verify'),
+        body: json.encode({"otp": otp, "email": email}));
     if (response.statusCode == 200) {
       return "success";
     } else {
@@ -27,11 +28,12 @@ class AuthController {
     }
   }
 
-  Future signInVerifyOtp(int otp) async {
+  
+  Future<String> sendOtp(email) async {
     final response = await http.post(
         Uri.parse(
-            'https://auth-backend-production-054a.up.railway.app/api/v1/auth/verify'),
-        body: json.encode({"otp": otp, "email": "utkarsh2110024@akgec.ac.in"}));
+            'https://auth-backend-production-054a.up.railway.app/api/v1/auth/send-otp'),
+        body: json.encode({"email": email}));
     if (response.statusCode == 200) {
       return "success";
     } else {
@@ -53,11 +55,19 @@ class AuthController {
     }
   }
 
-  Future resetPasswordUsingOtp(email) async {
+ 
+  Future resetPasswordUsingOtp(otp, email, newPass) async {
     final response = await http.post(
-        Uri.parse(
-            'https://auth-backend-production-054a.up.railway.app/api/v1/auth/reset'),
-        body: json.encode({"email": email}));
+      Uri.parse(
+          'https://auth-backend-production-054a.up.railway.app/api/v1/auth/reset'),
+      body: json.encode(
+        {
+          "otp": otp,
+          "email": email,
+          "new_password": newPass
+        },
+      ),
+    );
     if (response.statusCode == 200) {
       return "success";
     } else {
@@ -65,7 +75,6 @@ class AuthController {
     }
   }
 }
-
 AccessToken accessTokenFromJson(String str) =>
     AccessToken.fromJson(json.decode(str));
 
