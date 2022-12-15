@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Blogs extends StatelessWidget {
   const Blogs({
@@ -19,12 +20,13 @@ class Blogs extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Blogs",
-              style: TextStyle(
-                  color: Color.fromARGB(255, 87, 87, 87),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+              style: GoogleFonts.poppins(
+                color: Color.fromARGB(255, 87, 87, 87),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(
@@ -88,7 +90,9 @@ class Blogs extends StatelessWidget {
                               child: Text(
                                 '4 methods of calculating Network, which no one will \ntell you',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w600),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                             Padding(
@@ -126,7 +130,7 @@ class Blogs extends StatelessWidget {
                                         fontWeight: FontWeight.w600),
                                   ),
                                   const Padding(
-                                    padding: EdgeInsets.only(left: 58.0),
+                                    padding: EdgeInsets.only(left: 55.0),
                                     child: Text(
                                       '08/09/2022',
                                       style: TextStyle(
@@ -195,7 +199,7 @@ class Blogs extends StatelessWidget {
                               child: Text(
                                 '4 methods of calculating Network, which no one will \ntell you',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w600),
+                                    fontSize: 13, fontWeight: FontWeight.w600),
                               ),
                             ),
                             Padding(
@@ -233,7 +237,7 @@ class Blogs extends StatelessWidget {
                                         fontWeight: FontWeight.w600),
                                   ),
                                   const Padding(
-                                    padding: EdgeInsets.only(left: 58.0),
+                                    padding: EdgeInsets.only(left: 55.0),
                                     child: Text(
                                       '08/09/2022',
                                       style: TextStyle(
@@ -302,14 +306,14 @@ class Blogs extends StatelessWidget {
                               child: Text(
                                 '4 methods of calculating Network, which no one will \ntell you',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w600),
+                                    fontSize: 13, fontWeight: FontWeight.w600),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(
                                 12,
                                 0,
-                                12,
+                                10,
                                 0,
                               ),
                               child: Text(
@@ -340,7 +344,7 @@ class Blogs extends StatelessWidget {
                                         fontWeight: FontWeight.w600),
                                   ),
                                   const Padding(
-                                    padding: EdgeInsets.only(left: 58.0),
+                                    padding: EdgeInsets.only(left: 55.0),
                                     child: Text(
                                       '08/09/2022',
                                       style: TextStyle(

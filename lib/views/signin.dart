@@ -73,7 +73,7 @@ class SigninState extends State<Signin> {
       return showSnackBarr(res, context);
     } else {
       if (!mounted) return;
-      showSnackBarr('Enter the OTP sent to your email address', context);
+      showSnackBarr('Otp is Sent to Your mail spam', context);
       return Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => Verifyotp(
                 email: _email.text,

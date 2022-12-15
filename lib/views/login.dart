@@ -45,8 +45,11 @@ class LloginpageState extends State<Loginpage> {
       return showSnackBarr(res, context);
     } else {
       if (!mounted) return;
-      return Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const Homepage()));
+      return Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => const Homepage(),
+          ),
+          (route) => false);
     }
   }
 

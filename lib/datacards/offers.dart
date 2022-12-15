@@ -104,7 +104,8 @@ class Offers extends StatelessWidget {
                                         const Color.fromARGB(255, 24, 63, 159)),
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: const Center(
+                              child:
+                               const Center(
                                 child: Text(
                                   "Explore rewards +",
                                   style: TextStyle(

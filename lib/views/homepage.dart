@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project3/constant/route.dart';
+import 'package:project3/datacards/blue2.dart';
 import '../datacards/blogs.dart';
 import '../datacards/bluebox.dart';
 import '../datacards/categories.dart';
+import '../datacards/data.dart';
 import '../datacards/offers.dart';
 import '../datacards/quotes.dart';
 import '../datacards/task.dart';
@@ -11,33 +13,81 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 enum MenuAction { logout }
 
 class Homepage extends StatefulWidget {
-  const Homepage({super.key, this.name});
+  const Homepage({
+    super.key,
+    this.name,
+  });
   final name;
+
   @override
   State<Homepage> createState() => _Homepage();
 }
 
 class _Homepage extends State<Homepage> {
+  @override
+  void initState() {
+    if (Appdata.swap) {
+      setState(() {
+        Appdata.x = const Bluebox();
+      });
+    } else {
+      setState(() {
+        Appdata.x = const Blue2();
+      });
+    }
+    super.initState();
+  }
+
   int _index = 0;
   @override
   Widget build(BuildContext context) {
+    if (Appdata.swap) {
+      setState(() {
+        Appdata.x = const Bluebox();
+      });
+    } else {
+      setState(() {
+        Appdata.x = const Blue2();
+      });
+    }
+
     return SafeArea(
       child: Scaffold(
         extendBody: true,
         bottomNavigationBar: FloatingNavbar(
           borderRadius: 25,
+          itemBorderRadius: 20,
           iconSize: 28,
           onTap: (int val) => setState(() => _index = val),
           currentIndex: _index,
           backgroundColor: Colors.white,
           selectedItemColor: Colors.indigo,
-          selectedBackgroundColor: Colors.white,
+          selectedBackgroundColor: const Color.fromARGB(255, 232, 234, 246),
           unselectedItemColor: Colors.grey[400],
           items: [
-            FloatingNavbarItem(icon: Icons.home),
+            FloatingNavbarItem(
+              customWidget: Row(
+                children: const [
+                  Icon(
+                    Icons.home,
+                    color: Colors.indigo,
+                  ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.indigo,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             FloatingNavbarItem(icon: Icons.credit_card_outlined),
             FloatingNavbarItem(icon: Icons.pie_chart_outline),
-            FloatingNavbarItem(icon: Icons.money),
+            FloatingNavbarItem(
+                customWidget: Image.asset(
+              "assets/awardline.png",
+            )),
           ],
         ),
         body: CustomScrollView(
@@ -150,25 +200,33 @@ class _Homepage extends State<Homepage> {
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
+                                children: [
+                                  const Text(
                                     " Your doing",
                                     style: TextStyle(
                                         color: Color.fromARGB(255, 87, 87, 87),
                                         fontSize: 17,
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  Text(
-                                    " great keep it up.",
-                                    style: TextStyle(
-                                        color: Color.fromARGB(255, 87, 87, 87),
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w500),
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        " great keep it up.",
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 87, 87, 87),
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Image.asset("assets/tur.png"),
+                                    ],
                                   ),
                                 ],
                               ),
                             ),
-                            const Bluebox(),
+                            Appdata.x,
+                            // const Blue2(),
+                            // const Bluebox(),
                             const Categories(),
                             const Task(),
                             const Offers(),

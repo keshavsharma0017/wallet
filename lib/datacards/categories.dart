@@ -54,8 +54,9 @@ class Categories extends StatelessWidget {
                                 elevation: 1,
                               ),
                               onPressed: () {},
-                              child: const Icon(Icons.fastfood_sharp,
-                                  color: Colors.orange),
+                              child: Image.asset(
+                                'assets/food.png',
+                              ),
                             ),
                           ),
                           const SizedBox(height: 10),
@@ -108,8 +109,9 @@ class Categories extends StatelessWidget {
                                 elevation: 1,
                               ),
                               onPressed: () {},
-                              child: const Icon(Icons.shopping_bag_sharp,
-                                  color: Colors.purpleAccent),
+                              child: Image.asset(
+                                'assets/shopping.png',
+                              ),
                             ),
                           ),
                           const SizedBox(height: 10),
@@ -135,8 +137,9 @@ class Categories extends StatelessWidget {
                                 elevation: 1,
                               ),
                               onPressed: () {},
-                              child:
-                                  const Icon(Icons.tv, color: Colors.lightBlue),
+                              child: Image.asset(
+                                'assets/tv.png',
+                              ),
                             ),
                           ),
                           const SizedBox(height: 10),

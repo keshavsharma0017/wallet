@@ -39,6 +39,9 @@ dependencies:
   sliding_up_panel: ^2.0.0+1
   floating_bottom_navigation_bar: ^1.5.2
   http: ^0.13.5
+  google_fonts: ^3.0.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:

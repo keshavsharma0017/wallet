@@ -69,61 +69,63 @@ class _VerifyotpState extends State<Verifyotp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  TextFormField(
-                    controller: _otp,
-                    enableSuggestions: false,
-                    autocorrect: false,
-                    keyboardType: TextInputType.number,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    decoration: InputDecoration(
-                      labelText: 'Otp',
-                      hintText: "",
-                      prefixIcon: const Align(
-                        widthFactor: 1.0,
-                        heightFactor: 1.0,
-                        child: Icon(
-                          Icons.numbers_outlined,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    TextFormField(
+                      controller: _otp,
+                      enableSuggestions: false,
+                      autocorrect: false,
+                      keyboardType: TextInputType.number,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: InputDecoration(
+                        labelText: 'Otp',
+                        hintText: "",
+                        prefixIcon: const Align(
+                          widthFactor: 1.0,
+                          heightFactor: 1.0,
+                          child: Icon(
+                            Icons.numbers_outlined,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          color: Colors.blue,
+                      validator: ((value) {
+                        if (value!.isEmpty) {
+                          return "Otp cannot be empty";
+                        }
+                        return null;
+                      }),
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          Verify();
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
                         ),
                       ),
+                      child: const Text('Register'),
                     ),
-                    validator: ((value) {
-                      if (value!.isEmpty) {
-                        return "Otp cannot be empty";
-                      }
-                      return null;
-                    }),
-                  ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      if (_formKey.currentState!.validate()) {
-                        Verify();
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    child: const Text('Register'),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
